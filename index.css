@@ -21,7 +21,7 @@ body{
   background-color: #fff;
   margin: 0;
   padding: 0;
-  width: 100%;
+  /* width: 100%; */
 }
 html {
   scroll-behavior: smooth;
@@ -29,32 +29,20 @@ html {
 /* ----------------------------------------------------------- */
 
 /* 1- header */
-header{
-  background-image: 
-  linear-gradient(rgba(0, 0, 0, 0.479) 100%,rgba(0, 0, 255, 0.041)),
-  url(accessories-near-laptop-notebooks.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 800px;
-  background-attachment: fixed;
-}
-
-/* 2- home */
-#head .navbar{
-  z-index: 1000;
+header .navbar{
+  position: fixed;
+  z-index: 999;
+  width: 100%;
 }
 header nav .container-fluid ul{
   background-color: #2f3e46f5;
   background-size: cover;
   border-radius: 50px;
   width: 60%;
-  /* list-style: none; */
   overflow: hidden;
   transition: 1s;
 }
-header nav .container-fluid ul li{
-  display: inline-block;
-}
+
 header nav .container-fluid ul li a{
   color: white;
   font-size: 25px;
@@ -74,19 +62,61 @@ header nav .container-fluid ul  .special{
 }
 /* 2- home */
 /* form  */
-header .login {
+#home{
+  background-image: 
+  linear-gradient(rgba(0, 0, 0, 0.479) 100%,rgba(0, 0, 255, 0.041)),
+  url(accessories-near-laptop-notebooks.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 800px;
+  background-attachment: fixed;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#home .form-box{
+  position: relative;
+  display: flex;
+  width: 512px;
+  height: 490px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+#home .form-box #log-in {
+  position: absolute;
+  left: 4px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  transition: .5s ease-in-out;
+  
   background-color: #cad2c5a1;
   background-size: cover;
   backdrop-filter: blur(2px);
   border: 2px solid rgb(255, 255, 255,.2);
   border-radius: 40px;
   padding: 20px 30px;
-  width: 35%;
-  height: 60%;
-  margin: 100px auto;
+}
+#home .form-box #sign-up{
+  position: absolute;
+  right: -520px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  transition: .5s ease-in-out;
+
+  background-color: #cad2c5a1;
+  background-size: cover;
+  backdrop-filter: blur(2px);
+  border: 2px solid rgb(255, 255, 255,.2);
+  border-radius: 40px;
+  padding: 20px 30px;
 }
 
-header .login h2 {
+#home  h2 {
   margin-bottom: 20px;
   font-weight: bolder;
   font-size: 40px;
@@ -94,25 +124,25 @@ header .login h2 {
   color:  #009973;
 }
 
-header .login .form label {
+#home  form label {
   display: block;
   margin-bottom: 10px;
   color:  #009973;
   font-size: 25px;
 }
 
-header .login .form .form-control {
+#home  form .form-control {
   background-color: rgba(122, 122, 116, 0.445); 
   width: 100%;
   font-size: 17px;
   padding: 10px;
   border-radius: 10px;
 }
-header .login .form .form-control::placeholder{
+#home  form .form-control::placeholder{
   color: rgba(0, 0, 0, 0.452); 
 }
 /* entering button */
-header .login form button {
+#home  form button {
   margin-top: 15px;
   border-radius: 10px;
   width: 100%;
@@ -123,46 +153,39 @@ header .login form button {
   border: none;
   transition-delay:  1s;
 }
-header .login form button:hover {
+#home  form button:hover {
   background-image: linear-gradient(rgba(0, 0, 0, 0.253) ,rgba(35, 35, 36, 0.212));
   color: #ffff;
 }
 /* small p links */
-header .login  .small-p {
+#home   .small-p {
   margin-top: 18px;
   font-size: 22px;
 }
-header .login .small-p  .p1{
+#home  .small-p  .p1{
   margin-right:26px;
   text-decoration: none;
   color: black;
   float: right;
 }
-header .login .small-p  .a1{
+#home  .small-p  .a1{
   margin-left: 26px;
   float: left;
   text-decoration: underline;
   color: #009973;
 }
-header .login .small-p a:hover {
+#home  .small-p a:hover {
   color: #009973ab;
 }
-header .login .small-p a:active {
+#home  .small-p a:active {
   color: #0d0e0dab;
 }
 
-/* .register{
-  background-color: #009973;
-  border-radius: 50%;
-  padding: 5px 10px;
-  margin-right: 10px;
-} */
 /* --------------------------------------------------------- */
 
 /* 3- about */
 #about{
-  margin-top: 50px;
-  margin: 50px 40px;
+  margin: 98px 40px;
   height: 800px;
 }
 #about h2{
@@ -183,6 +206,11 @@ header .login .small-p a:active {
 }
 #about .about-text ul li{
   margin-bottom: 20px;
+}
+#about .about-text p{
+  color: #fff;
+  font-size: 33px;
+  font-weight: bold;
 }
 #about .about-text h3{
   color: #fff;

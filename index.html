@@ -37,40 +37,61 @@
         </div>
       </div>
     </nav>
-
-    <!-- 2- home  -->
-    <div class="login mb-3" >
-      <h2>تسجيل الدخول</h2>
-      <form class="form" >
-        <div class="mb-3">
-          <label for="formGroupExampleInput" class="form-label"> الكود الخاص بك</label>
-          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="أدخل الكود الخاص بك">
-        </div>
-        <div class="mb-3">
-          <label for="formGroupExampleInput2" class="form-label">الرقم السري</label>
-          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="أدخل الرقم السري">
-        </div>
-        <!-- entering button  -->
-        <button type="submit">تسجيل الدخول</button> 
-      </form>
-      <div class="small-p">
-        <p class="p1" href="#">لا تملك حساب؟</p>
-        <a class="a1" href="#">سجل الآن!</a>
-      </div>
-    </div>
   </header>
   <!-- ---------------------------------------- ---->
-  
-  <!-- --------------------------------------------- -->
+  <section id="home">
+    <div class="form-box">
+      <!-- login ---------- -->
+      <div id="log-in" class="login mb-3" >
+        <h2>تسجيل الدخول</h2>
+        <form id="form1" >
+          <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label"> الكود الخاص بك</label>
+            <input type="text" class="form-control" id="yourCode" placeholder="أدخل الكود الخاص بك">
+          </div>
+          <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">الرقم السري</label>
+            <input type="text" class="form-control" id="password" placeholder="أدخل الرقم السري">
+          </div>
+          <!-- entering button  -->
+          <button type="submit">تسجيل الدخول</button> 
+        </form>
+        <div class="small-p">
+          <p class="p1" href="#">ليس لديك حساب؟</p>
+          <a class="a1" href="#" onclick="register()">تسجيل جديد!</a>
+        </div>
+      </div>
 
+      <!-- sign up--------- -->
+      <div id="sign-up" class="signup-container mb-3" >
+        <h2>التسجيل </h2>
+        <form id="form2" >
+          <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label"> الاسم</label>
+            <input type="text" class="form-control" id="yourName" placeholder="الاسم المُعَرف لك">
+          </div>
+          <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">الكود الخاص بك</label>
+            <input type="text" class="form-control" id="yourCode" placeholder="أدخل الكود الخاص بك">
+          </div>
+          <!-- entering button  -->
+          <button type="submit">تسجيل </button> 
+        </form>
+        <div class="small-p">
+          <p class="p1" href="#">تمتلك حساب؟</p>
+          <a class="a1" href="#" onclick="login()">تسجيل دخول</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ------------------------------------ -->
   <!-- 3- about  -->
   <section id="about">
-    
       <h2>عن الموقع</h2>
       
       <div class=" row row-cols-1 row-cols-md-2 row-cols-sm-1 g-4">
         <div class="col-7 about-text"> <!-- about text  -->
-            <h3>موقع [جدولة] يتيح لك التحكم بكل ما يتعلق بموظفينك من مكان واحد ويتمتع بمزايا لا حصر لها..</h3>
+            <p>موقع [جدولة] يتيح لك التحكم بكل ما يتعلق بموظفينك من مكان واحد ويتمتع بمزايا لا حصر لها..</p>
             <br>
             <ul>
               <li><h3>تخزين بيانات الموظفين</h3>من معلومات شخصيه الي مهارات وخبرات ,كل ما يتعلق بموظفينك في مكان واحد.</li>
