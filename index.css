@@ -65,7 +65,7 @@ header nav .container-fluid ul  .special{
 #home{
   background-image: 
   linear-gradient(rgba(0, 0, 0, 0.479) 100%,rgba(0, 0, 255, 0.041)),
-  url(accessories-near-laptop-notebooks.jpg);
+  url(photos/accessories-near-laptop-notebooks.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   height: 800px;
@@ -208,6 +208,7 @@ header nav .container-fluid ul  .special{
   margin-bottom: 20px;
 }
 #about .about-text p{
+  line-height: 37px;
   color: #fff;
   font-size: 33px;
   font-weight: bold;
