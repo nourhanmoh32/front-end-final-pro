@@ -11,6 +11,7 @@
     text-decoration: none;
     font-family: 'amiri', 'cursive';
 }
+/* --------------------- */
 /* 1- sidebar  */
 .sidebar{
     width: 345px;
@@ -72,43 +73,69 @@
 }
 /* ------------------------------------------------ */
 
-/* 2- byanat  */
-.bayanat header .card{
+.container {
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right:365px;
-    margin-top: 20px;
+    border: 1px solid #ccc;
     padding: 20px;
-    border: 1px solid rgba(128, 128, 128, 0.281);
-    box-shadow: 3px 2px 2px rgba(177, 173, 173, 0.623);
+    width: 500px;
+    margin: 0 auto;
+    background-color: #cad2c5;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-/* img */
-.bayanat header .card .emp-img img{  
-    border-radius: 50%;
-    border: 1px solid rgba(128, 128, 128, 0.281);
+
+.header {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
 }
-.bayanat header h3{
-    color:#009973;
-    margin-right: 10px;
+
+.label {
+    display: block;
+    margin-bottom: 5px;
+    color: #777;
 }
-/* button */
-.bayanat header .card button {
+
+.input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
     border: none;
-    width: 30%;
-    font-size: 20px;
-    padding: 7px;    
-    border-radius: 40px; 
-    background-color: #009973;
-    color: #fff; 
-    transition-delay: .4s;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 10px;
+    display: inline-block;
 }
-.bayanat header .card button:hover{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.253) ,rgba(35, 35, 36, 0.212));
-    color: #ffff;
+
+.button:hover {
+    background-color: #45a049;
 }
-/* --------------------------------------------------------- */
 
+.button-cancel {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 10px;
+    display: inline-block;
+}
 
-
+.button-cancel:hover {
+    background-color: #c82333;
+}
+img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+}

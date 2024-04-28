@@ -71,44 +71,34 @@
     transition: .2s;
 }
 /* ------------------------------------------------ */
-
-/* 2- byanat  */
-.bayanat header .card{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right:365px;
+/* 2- attendance */
+section table{
+    margin-right: 365px;
+    background-color: #e4dcdc4b;
     margin-top: 20px;
-    padding: 20px;
-    border: 1px solid rgba(128, 128, 128, 0.281);
+    border-collapse: collapse;
+    /* border:1px solid rgba(212, 208, 208, 0.562); */
     box-shadow: 3px 2px 2px rgba(177, 173, 173, 0.623);
+    width:70%;
+    border-radius: 15px;
+    text-align: center;
+    
 }
-/* img */
-.bayanat header .card .emp-img img{  
-    border-radius: 50%;
-    border: 1px solid rgba(128, 128, 128, 0.281);
+section table thead tr{
+    font-weight: bold;
+    font-family: 'amiri', 'cursive';
+    font-size: 24px;
+    color: #009973;
+    border-bottom: 1px solid #00997344;
+    
 }
-.bayanat header h3{
-    color:#009973;
-    margin-right: 10px;
+table th,td{
+    padding: 20px;
+    margin-top: 10px;
+    border-left: 1px solid #8e919044;
+    border-bottom:  1px solid #8e919044;
+    border-radius: 15px;
 }
-/* button */
-.bayanat header .card button {
-    border: none;
-    width: 30%;
-    font-size: 20px;
-    padding: 7px;    
-    border-radius: 40px; 
-    background-color: #009973;
-    color: #fff; 
-    transition-delay: .4s;
+table td{
+    color: #2f3e46f5;
 }
-.bayanat header .card button:hover{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.253) ,rgba(35, 35, 36, 0.212));
-    color: #ffff;
-}
-/* --------------------------------------------------------- */
-
-
-
