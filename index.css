@@ -35,12 +35,9 @@ header .navbar{
   z-index: 999;
   width: 100%;
 }
-header .navbar .navbar-brand .logo{
-  text-decoration: none;
-  font-size: 39px;
-  width: 10%;
-  color: #fff;
-  font-family: "Qahiri", sans-serif;
+header .navbar .navbar-brand img {
+  height: 50px;
+  width: 120px;
 }
 header nav .container-fluid ul{
   background-color: #2f3e46f5;
@@ -65,7 +62,7 @@ header nav .container-fluid ul li a:hover{
   transition: .5s;
 }
 
-header nav .container-fluid ul  .special{
+header nav .container-fluid ul .special{
   margin-right: 80px;
 }
 /* 2- home */
@@ -76,7 +73,7 @@ header nav .container-fluid ul  .special{
   url(photos/accessories-near-laptop-notebooks.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 800px;
+  height: 950px;
   background-attachment: fixed;
   position: relative;
   display: flex;
@@ -194,7 +191,6 @@ header nav .container-fluid ul  .special{
 /* 3- about */
 #about{
   margin: 98px 40px;
-  height: 800px;
 }
 #about h2{
   font-size: 45px;
@@ -232,6 +228,7 @@ header nav .container-fluid ul  .special{
   height: 100%;
   width: 100%;
 }
+
 /* ---------------------------------------------- */
 
 /* 4- service */
@@ -247,7 +244,7 @@ header nav .container-fluid ul  .special{
   padding: 25px ;
 }
 #service .container .col{
-  width: 50%;
+  /* width: 40%; */
   margin-bottom: 30px;
 }
 /* cards */

@@ -20,14 +20,11 @@
     height: 100%;
     background-color: #009973;
 }
-.sidebar .navbar-brand .logo{
-    margin: 50px 40px;
-    text-decoration: none;
-    font-size: 39px;
-    width: 10%;
-    color: #fff;
-    font-family: "Qahiri", sans-serif;
+.sidebar .navbar-brand img{
+    height: 50px;
+    width: 120px;
 }
+
 .sidebar .sidebar-menu{
     margin-right: 100px;
     margin-top: 4px;

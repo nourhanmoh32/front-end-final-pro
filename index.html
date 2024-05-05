@@ -16,9 +16,9 @@
     <!-- logo -->
     <nav class="navbar navbar-expand-lg ">
       <div class="container-fluid">
-        <div class="navbar-brand" href="#">
-          <a class="logo">جَدوَلَة</a>
-        </div>
+        <a class="navbar-brand" href="index.html">
+          <img src="photos/logo.png" alt="logo">
+        </a>
         <!-- nav bar -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -59,10 +59,10 @@
             <input type="text" class="form-control" id="password" placeholder="أدخل الرقم السري">
           </div>
           <!-- entering button  -->
-          <button type="submit">تسجيل الدخول</button> 
+          <button type="submit" id="log" onclick="toDash()">تسجيل الدخول</button> 
         </form>
         <div class="small-p">
-          <p class="p1" href="#">ليس لديك حساب؟</p>
+          <p class="p1" >ليس لديك حساب؟</p>
           <a class="a1" href="#" onclick="register()">تسجيل جديد!</a>
         </div>
       </div>
@@ -80,7 +80,7 @@
             <input type="text" class="form-control" id="yourCode" placeholder="أدخل الكود الخاص بك">
           </div>
           <!-- entering button  -->
-          <button type="submit" >تسجيل </button> 
+          <button type="submit" id="sign" onclick="toDash()">تسجيل </button> 
         </form>
         <div class="small-p">
           <p class="p1" href="#">تمتلك حساب؟</p>

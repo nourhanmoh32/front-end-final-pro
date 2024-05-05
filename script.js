@@ -7,12 +7,26 @@ form1.addEventListener('submit',function(event){
     if(yourCode.value==="" || password.value===""){
         alert("استكمل البيانات");
     }
+    else{   // transition to dashboard
+        const signupButton = document.getElementById('log');  
+        signupButton.addEventListener('click', function() {
+        window.location.href = 'index2.html';
+        });
+    }
+
     event.preventDefault();
 });
 form2.addEventListener('submit',function(event){ 
     if(yourName.value==="" || yourCode.value===""){
         alert("استكمل البيانات");
     }
+    else{   // transition to dashboard
+        const signupButton = document.getElementById('sign');  
+        signupButton.addEventListener('click', function() {
+        window.location.href = 'index2.html';
+        });
+    }
+
     event.preventDefault();
 });
 
@@ -30,3 +44,6 @@ function register(){
     b.style.right="4px";
 }
 // ---------------------------------------------------------------
+
+
+
