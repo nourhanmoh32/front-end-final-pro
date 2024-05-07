@@ -72,9 +72,6 @@
 /* 2- byanat  */
 .bayanat header .card{
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin-right:365px;
     margin-top: 20px;
     padding: 20px;
@@ -82,9 +79,19 @@
     box-shadow: 3px 2px 2px rgba(177, 173, 173, 0.623);
 }
 /* img */
-.bayanat header .card .emp-img img{  
+.bayanat header .card .emp-img{
+    width: 100px;
+    height: 120px;
     border-radius: 50%;
-    border: 1px solid rgba(128, 128, 128, 0.281);
+    text-align: center;
+    margin: auto;
+}
+.bayanat header .card .emp-img img{  
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    border-radius: inherit;
 }
 .bayanat header h3{
     color:#009973;

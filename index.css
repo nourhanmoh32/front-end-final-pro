@@ -236,6 +236,7 @@ header nav .container-fluid ul .special{
 #service{
   background-color:#009973;
   padding: 30px;
+  height: 100vh;
 }
 #service h2{
   text-align: center;
