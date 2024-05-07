@@ -36,44 +36,47 @@
     </div>
     <!-- ---------------------------------------------------- -->
 
-    <!-- 2- holiday -->
-    <div class="container">
-        <img src="photos/Screenshot (9).png"width="150" height="100">
-        <h2 class="header">طلب أجازة</h2>
-        <form action="#">
-            <h3 dir="rtl">طلب أجازه من محمد أحمد</h3>
+    <!-- 2- departure -->
+    <section class="departure">
+        <div class="hol-img">
+        <img src="photos/person.jpg"width="150" height="100">
+        </div>
 
-            <div class="label">تاريخ الأجازة:</div>
-            <input type="date" class="input" name="vacation_date">
+        <h2 class="header">طلب انصراف من "محمد أحمد أحمد"</h2>
+        <form action="#">
+            <div class="label">زمن الانصراف:</div>
+            <div class="date-div"></div>
 
             <div class="label">السبب:</div>
-            <textarea class="input" name="reason" rows="5"></textarea>
+            <div class="reason-div"></div>
 
-            <div style="text-align: center; margin-top: 20px;">
+            <div class="hol-buttons">
                 <button type="button" class="button" onclick="approveVacation()">قبول الطلب</button>
                 <button type="button" class="button-cancel" onclick="rejectVacation()">رفض الطلب</button>
             </div>
         </form>
-    </div>
-    
-    <!-- <div class="container">
-        <img src="photos/Screenshot (9).png"width="150" height="100">
-        <h2 class="header">طلب إنصراف</h2>
+    </section>
 
+    <!-- second request -->
+    <section class="departure">
+        <div class="hol-img">
+        <img src="photos/person.jpg"width="150" height="100">
+        </div>
+
+        <h2 class="header">طلب انصراف من "زيد محمد علي"</h2>
         <form action="#">
-            <h3 dir="rtl">طلب إنصراف من محمد أحمد</h3>
+            <div class="label">زمن الانصراف:</div>
+            <div class="date-div"></div>
 
-            <div class="label">نص الإنصراف:</div>
-            <textarea class="input" name="reason" rows="5"></textarea>
             <div class="label">السبب:</div>
-            <textarea class="input" name="reason" rows="5"></textarea>
+            <div class="reason-div"></div>
 
-            <div style="text-align: center; margin-top: 20px;">
+            <div class="hol-buttons">
                 <button type="button" class="button" onclick="approveVacation()">قبول الطلب</button>
                 <button type="button" class="button-cancel" onclick="rejectVacation()">رفض الطلب</button>
             </div>
         </form>
-    </div> -->
+    </section>
 
 <script src="script.js"></script>  
 </body>
