@@ -70,10 +70,34 @@
 /* ------------------------------------------------ */
 
 /* 2- byanat  */
+/* add button */
+
+.bayanat  #addDivButton{
+    position: relative;
+    float: left;
+    border: none;
+    width: 10%;
+    font-size: 25px;
+    padding: 7px; 
+    margin-left: 50px;   
+    margin-top: 10px;
+    border-radius: 20px; 
+    background-color: #009973;
+    color: #fff; 
+    
+}
+.bayanat  #addDivButton:hover{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.253) ,rgba(35, 35, 36, 0.212));
+    color: #ffff;
+}
+/* employee card */
+
 .bayanat header .card{
+    display: flex;
+    max-width: 540px;
     position: relative;
     margin-right:365px;
-    margin-top: 20px;
+    margin-top: 10px;
     padding: 20px;
     border: 1px solid rgba(128, 128, 128, 0.281);
     box-shadow: 3px 2px 2px rgba(177, 173, 173, 0.623);
@@ -103,7 +127,7 @@
     width: 30%;
     font-size: 20px;
     padding: 7px;    
-    border-radius: 40px; 
+    border-radius: 20px; 
     background-color: #009973;
     color: #fff; 
     transition-delay: .4s;
@@ -112,7 +136,5 @@
     background-image: linear-gradient(rgba(0, 0, 0, 0.253) ,rgba(35, 35, 36, 0.212));
     color: #ffff;
 }
+
 /* --------------------------------------------------------- */
-
-
-
