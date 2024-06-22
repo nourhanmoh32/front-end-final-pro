@@ -10,6 +10,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Mirza:wght@600&family=Reem+Kufi:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Gulzar&family=Mirza:wght@600&family=Reem+Kufi:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@400;700&family=Qahiri&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lateef:wght@200;300;400;500;600;700;800&display=swap');
 
 *{
     direction: rtl;
@@ -19,7 +20,7 @@
     -moz-box-sizing: border-box;
 }
 body{
-  background-color: #fff;
+  background-color: #f0ecec;
   margin: 0;
   padding: 0;
   /* width: 100%; */
@@ -35,36 +36,50 @@ header .navbar{
   z-index: 999;
   width: 100%;
 }
-header .navbar .navbar-brand img {
+header .navbar .container .navbar-brand img {
   height: 50px;
   width: 120px;
+  margin-left: 40px;
 }
-header nav .container-fluid ul{
+header .navbar .container  ul{
   background-color: #2f3e46f5;
   background-size: cover;
   border-radius: 50px;
-  width: 60%;
   overflow: hidden;
   transition: 1s;
+  
 }
 
-header nav .container-fluid ul li a{
+header .navbar .container ul li a{
   color: white;
-  font-size: 25px;
+  font-size: 23px;
   font-weight: bold;
-  margin: 3px 20px;
+  padding: 3px 20px;
   letter-spacing: 1px;
 }
-header nav .container-fluid ul li a:hover{
+header .navbar .container ul li a:hover{
   color: #009973;
   background-color: #fff;
   border-radius: 40px;
   transition: .5s;
 }
-
-header nav .container-fluid ul .special{
+header .navbar .container  ul .special{
   margin-right: 80px;
+  padding-left: 7px;
 }
+.navbar .navbar-toggler{
+  color: rgba(31, 30, 30, 0.589);
+  border-color: rgba(31, 30, 30, 0.589);
+  font-size: 25px;
+  margin-left: 10px;
+  z-index: 2px;
+}
+.navbar .navbar-toggler:focus{
+  box-shadow: none;
+  border: #009973 solid 3px;
+}
+
+
 /* 2- home */
 /* form  */
 #home{
@@ -186,6 +201,7 @@ header nav .container-fluid ul .special{
   color: #0d0e0dab;
 }
 
+
 /* --------------------------------------------------------- */
 
 /* 3- about */
@@ -204,12 +220,13 @@ header nav .container-fluid ul .special{
 #about .row .about-text {
   background-color: #009973;
   background-size: cover;
-  padding: 28px;
+  padding: 26px;
   border-radius: 30px;
   line-height: 29px;
 }
 #about .about-text ul li{
   margin-bottom: 20px;
+  font-size: 25px;
 }
 #about .about-text p{
   line-height: 37px;
@@ -218,25 +235,87 @@ header nav .container-fluid ul .special{
   font-weight: bold;
 }
 #about .about-text h3{
-  color: #fff;
+  color: #2f3e46f5;
+  font-size: 38px;
 }
 #about .about-text ul li{
   color: #fff;
 }
 /* image  */
 #about .about-image img{
-  height: 100%;
   width: 100%;
+  height:100%;
 }
 
-/* ---------------------------------------------- */
+/* animation on "about" section  */
+#about .about-text, #about .about-image img {
+  opacity: 0; /* Set initial opacity to 0 */
+}
+/*.about-text animation properties */
+#about .about-text.animate {
+  animation: slideIn 1s forwards;
+}
+@keyframes slideIn {
+  from {
+    transform: translatey(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translatey(0);
+    opacity: 1;
+  }
+}
+/*.about-image animation properties */
+#about .about-image img.animate{
+  animation: slideOut 1s forwards;  
+}
+@keyframes slideOut {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* media query */
+@media (max-width:992px) {
+  #about .about-image img{
+      display: none;
+  }
+  #about .row .about-text{
+    margin: auto;
+    width: 100%;
+  }
+  
+}
+/* ----------------------------------------------------- */
 
 /* 4- service */
 /* title */
 #service{
-  background-color:#009973;
+  background: linear-gradient(-45deg, #027e5f, #009973, #afadad9d, #92a09cd7);
+  background-size: 300% 400%;
+  animation: animate 15s ease infinite;
+  animation-duration: 7s;
+  animation-delay: -2s;
+  transition: .01s;
   padding: 30px;
-  height: 100vh;
+}
+/* service animation background */
+@keyframes animate{
+  0%{
+    background-position:0% 50%;
+  }
+  50%{
+    background-position:100% 50%;
+  }
+  100%{
+    background-position:0% 50%;
+  }
+  
 }
 #service h2{
   text-align: center;
@@ -245,8 +324,7 @@ header nav .container-fluid ul .special{
   padding: 25px ;
 }
 #service .container .col{
-  /* width: 40%; */
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 /* cards */
 #service .container .col .card{
@@ -254,11 +332,6 @@ header nav .container-fluid ul .special{
   width: 30%;
   height: 100%;
   box-shadow: 5px 4px 5px #afadad9d;
-}
-#service .container .col .card:hover{
-  transform: scale(1.07);
-  box-shadow: 5px 3px 5px rgb(167, 160, 160);
-  transition: .5s;
 }
 #service .container .col .card img{
   width: 100%;
@@ -275,13 +348,68 @@ header nav .container-fluid ul .special{
   padding: 5px 0;
 }
 
+/* animation on "service" section  */
+#service #first-row, #service #second-row{
+  opacity: 0; /* Set initial opacity to 0 */
+}
+/*first-row animation properties */
+#service #first-row.animate {
+  animation: slideIn 1s forwards;
+}
+@keyframes slideIn {
+  from {
+    transform: translatex(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translatex(0);
+    opacity: 1;
+  }
+}
+/*second-row animation properties */
+#service #second-row.animate{
+  animation: slideOut .8s forwards;  
+}
+@keyframes slideOut {
+  from {
+    transform: translatey(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translatey(0);
+    opacity: 1;
+  }
+}
+
+/* media query */
+@media (max-width: 576px) {
+  #service{
+    padding: 15px;
+  }
+  
+  #service h2{
+    font-size: 28px;
+    padding: 15px;
+  }
+  
+  #service .container .col {
+    margin-bottom: 30px;
+  }
+  
+  #service .container .col .card {
+    width: 100%;
+  }
+  
+  #service .container .col .card img {
+    height: auto;
+  }
+}
 /* -------------------------------------------------------------- */
 
 /* 5- app */
 #app{
   height: 600px;
   margin-top: 80px;
-  /* display: inline-block; */
 }
 /* rs */
 #app .container .rs h2{
@@ -297,10 +425,10 @@ header nav .container-fluid ul .special{
   border-radius: 11px;
 }
 #app .rs .app-buttons .btn:hover{
-  transform: scale(1.03);
+  transform: scale(1.05);
   box-shadow: 3px 4px 7px rgb(167, 160, 160);
   border: 4px solid #0099738f;
-  transition: .3s;
+  transition: .01s;
 }
 #app .rs .app-buttons .btn p{
   margin-left: 18%;
@@ -321,13 +449,71 @@ header nav .container-fluid ul .special{
 #app .rs .app-buttons .google{
   margin-left: 5%;
 }
-/* ls */
-#app .ls img{
-  width: 50%;
-  height: 20%;
-  float: left;
+/* ls image*/
+#app .container .ls img{
+  width: 100%;
+  height:100%;
 }
+
+/* animation on "app" section  */
+@keyframes moveing {
+  from {
+    transform: translatey(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translatey(0);
+    opacity: 1;
+  }
+}
+#screen-img img.animate {
+  animation: moveing 1s linear forwards;
+}
+
+/* media query */
+@media (max-width: 768px) {
+  #app .container .rs h2{
+    text-align: center;
+  }
+  #app .container .rs .app-buttons .btn {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  #app .container .ls img {
+    display: none;
+  }
+}
+
 /* ------------------------------------------------------------- */
 
 /* 6- footer  */
-
+#contact{
+  color: rgba(31, 30, 30, 0.589);
+  text-align: center;
+  margin-top: 110px;
+  margin-bottom: 80px;
+  font-size: 20px;
+  padding: 10px;
+  font-family: "Lateef", serif ;
+}
+/* icons */
+#contact .contact-icon i{
+  color: rgba(31, 30, 30, 0.589);
+  font-style: none;
+  margin-top: 46px;
+  margin-bottom: 5px;
+  padding: 10px;
+  margin-left: 7px;
+  font-size: 20px;
+  border-radius: 50%;
+  transition:.5s ;
+}
+#contact .contact-icon i:hover{
+  background-color: #009973;
+  color: #fff;
+}
+/* copyright span  */
+#contact .copyw span{
+  color: #009973;
+}
