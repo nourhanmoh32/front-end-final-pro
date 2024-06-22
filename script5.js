@@ -1,4 +1,4 @@
-
+// alert after press request buttons
 function approveVacation() {
     alert("تم قبول طلب الإنصراف بنجاح!");
 }
@@ -6,3 +6,11 @@ function approveVacation() {
 function rejectVacation() {
     alert("تم رفض طلب الإنصراف.");
 }
+// ----------------------------------------------------------
+
+// toggle sidebar
+const hamBurger = document.querySelector(".toggle-btn");
+
+hamBurger.addEventListener("click", function () {
+  document.querySelector("#sidebar").classList.toggle("expand");
+});

@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Gulzar&family=Mirza:wght@600&family=Reem+Kufi:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@400;700&family=Qahiri&display=swap');
+/* ااا */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 *{
     direction: rtl;
@@ -11,34 +13,80 @@
     text-decoration: none;
     font-family: 'amiri', 'cursive';
 }
-/* 1- sidebar  */
-.sidebar{
-    width: 345px;
-    position: fixed;
-    right: 0;
-    top: 0;
-    height: 100%;
-    background-color: #009973;
-}
-.sidebar .navbar-brand img{
-    height: 50px;
-    width: 120px;
+
+/*  1- sidebar  */
+a {
+    text-decoration: none;
 }
 
-.sidebar .sidebar-menu{
-    margin-right: 100px;
-    margin-top: 4px;
+li {
+    list-style: none;
 }
-.sidebar .sidebar-menu ul li{
-    padding-top: 40px;
+
+.wrapper {
+    /* display: flex; */
+    height: 100vh;
 }
-.sidebar .sidebar-menu ul li a{
-    
+
+#sidebar {
+    width: 70px;
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    min-width: 70px;
+    z-index: 1000;
+    transition: all .25s ease-in-out;
+    background-color: #009973;
+    display: flex;
+    flex-direction: column;
+}
+
+#sidebar.expand {
+    width: 300px;
+    min-width: 260px;
+}
+
+.toggle-btn {
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+    padding: 1rem 1.5rem;
+}
+.toggle-btn i {
+    font-size: 1.5rem;
+    color: #FFF;
+}
+
+.sidebar-logo img{
+    margin: 10px 0;
+    height: 50px;
+    width: 110px;
+}
+
+#sidebar:not(.expand) .sidebar-logo,
+#sidebar:not(.expand) a.sidebar-link span {
+    display: none;
+}
+
+.sidebar-nav {
+    padding: 2rem 0;
+    flex: 1 1 auto;
+}
+
+a.sidebar-link {
+    margin-right: 30px;
+    margin-bottom: 30px;
     font-size: 21px;
     color: #fff;
+    padding: .625rem 1.625rem;
+    color: #FFF;
+    display: block;
+    white-space: nowrap;
+    border-left: 3px solid transparent;
 }
 /* background hover for links */
-.sidebar .sidebar-menu ul li a:hover{
+#sidebar ul li a.sidebar-link:hover{
     color: #009973;
     font-weight: bold;
     background-color: #fff;
@@ -46,7 +94,7 @@
     transition: .3s;
     border-radius: 0px 30px 30px 0px;
 }
-.sidebar .sidebar-menu ul li a:focus{
+#sidebar ul li a span:focus{
     color: #009973;
     font-weight: bold;
     background-color: #fff;
@@ -54,32 +102,71 @@
     transition: 0s;
     border-radius: 0px 30px 30px 0px;
 }
-/* log out button*/
-.sidebar .sidebar-menu  .special{
-    margin-top: 100%;
-    font-size: 21px;
-    color: #fff;
-    text-decoration: none;
-    background: none;
-    border: none;
+
+.sidebar-item {
+    position: relative;
 }
-.sidebar .sidebar-menu .special:hover{
-    color: #2f3e46f5;
-    transition: .2s;
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"]::after {
+    border: solid;
+    border-width: 0 .075rem .075rem 0;
+    content: "";
+    display: inline-block;
+    padding: 2px;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.4rem;
+    transform: rotate(-135deg);
+    transition: all .2s ease-out;
 }
-/* ------------------------------------------------ */
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"].collapsed::after {
+    transform: rotate(45deg);
+    transition: all .2s ease-out;
+}
+@media screen and (max-width: 768px) {
+    .bayanat {
+        margin-left: 70px; /* Adjust margin for smaller screens */
+    }
+
+    #sidebar.expand ~ .bayanat {
+        margin-left: 70px; /* Keep the same margin when sidebar is expanded on smaller screens */
+    }
+}
+
+/* ------------------------------------------------------------------- */
 
 /* 2- byanat  */
-/* add button */
+.bayanat {
+    transition: margin-left 0.25s ease-in-out;
+    margin-right: 70px; /* Adjust initial margin for the collapsed sidebar */
+    padding-top: 10px; /* Optional: Add padding to ensure content doesn't get cut off */
+    flex: 1; /* Take up remaining space */
+    overflow-y: auto; /* Allow vertical scrolling */
+}
 
+#sidebar.expand ~ .bayanat {
+    margin-left: 300px; /* Adjust margin for the expanded sidebar */
+}
+
+/* Media queries for responsiveness bayanat with sidebar*/
+@media screen and (max-width: 768px) {
+    #sidebar.expand ~ .bayanat {
+        margin-left: 300px; /* Adjust margin for smaller screens when sidebar is expanded */
+    }
+
+    .bayanat {
+        margin-left: 70px; /* Ensure margin is correct for smaller screens */
+    }
+}
+/* add button */
 .bayanat  #addDivButton{
     position: relative;
-    float: left;
     border: none;
-    width: 10%;
     font-size: 25px;
-    padding: 7px; 
-    margin-left: 50px;   
+    padding: 10px; 
+    margin-right: 30px;  
+    margin-left: 30px; 
     margin-top: 10px;
     border-radius: 20px; 
     background-color: #009973;
@@ -90,13 +177,14 @@
     background-image: linear-gradient(rgba(0, 0, 0, 0.253) ,rgba(35, 35, 36, 0.212));
     color: #ffff;
 }
-/* employee card */
 
+/* employee card */
 .bayanat header .card{
     display: flex;
-    max-width: 540px;
+    width: 440px;
     position: relative;
-    margin-right:365px;
+    margin-right:30px;
+    margin-left: 30px; 
     margin-top: 10px;
     padding: 20px;
     border: 1px solid rgba(128, 128, 128, 0.281);
@@ -104,10 +192,7 @@
 }
 /* img */
 .bayanat header .card .emp-img{
-    width: 100px;
-    height: 120px;
     border-radius: 50%;
-    text-align: center;
     margin: auto;
 }
 .bayanat header .card .emp-img img{  
@@ -124,6 +209,197 @@
 /* button */
 .bayanat header .card button {
     border: none;
+    margin: auto 30px;
+    font-size: 20px;
+    display: inline;
+    padding: 7px;    
+    border-radius: 20px; 
+    background-color: #dc3545;
+    color: #fff; 
+    transition-delay: .4s;
+}
+.bayanat header .card button.edit-emp{
+    background-color: #009973;
+    margin-top: 10px;
+}
+.bayanat header .card button:hover{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.253) ,rgba(35, 35, 36, 0.212));
+    color: #ffff;
+}
+
+/* Media queries "bayanat"*/
+@media screen and (max-width: 768px) {
+    .bayanat header .card {
+        width: 100%;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    .bayanat #addDivButton {
+        margin-right: 10px;
+        margin-left: 10px;
+        font-size: 20px;
+        padding: 8px;
+    }
+    .bayanat header .card button {
+        font-size: 18px;
+        padding: 5px;
+        margin: auto 10px;
+    }
+    .bayanat header .card .emp-img {
+        width: 80px;
+        height: 80px;
+    }
+    .bayanat header h3 {
+        font-size: 20px;
+        margin-right: 5px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .bayanat header .card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        margin: 10px;
+        margin-left: 20px;
+        padding: 10px;
+    }
+    .bayanat #addDivButton {
+        margin-right: 5px;
+        margin-left: 5px;
+        font-size: 18px;
+        padding: 6px;
+    }
+    .bayanat header .card button {
+        font-size: 16px;
+        padding: 5px;
+        margin: 5px;
+    }
+    .bayanat header .card .emp-img {
+        width: 60px;
+        height: 60px;
+    }
+    .bayanat header h3 {
+        font-size: 18px;
+        margin-right: 0;
+    }
+}
+/* 1- sidebar  */
+/* .sidebar{
+    width: 345px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100%;
+    background-color: #009973;
+    z-index: 1;
+}
+.sidebar .navbar-brand img{
+    height: 50px;
+    width: 120px;
+    position: relative;
+}
+.sidebar .sidebar-menu{
+    margin-right: 100px;
+    margin-top: 4px;
+}
+.sidebar .sidebar-menu ul li{
+    padding-top: 40px;
+}
+.sidebar .sidebar-menu ul li a{
+    
+    font-size: 21px;
+    color: #fff;
+} */
+/* background hover for links */
+/* .sidebar .sidebar-menu ul li a:hover{
+    color: #009973;
+    font-weight: bold;
+    background-color: #fff;
+    padding-right: 6px;
+    transition: .3s;
+    border-radius: 0px 30px 30px 0px;
+}
+.sidebar .sidebar-menu ul li a:focus{
+    color: #009973;
+    font-weight: bold;
+    background-color: #fff;
+    padding-right: 6px;
+    transition: 0s;
+    border-radius: 0px 30px 30px 0px;
+} */
+/* log out button*/
+/* .sidebar .sidebar-menu  .special{
+    margin-top: 100%;
+    font-size: 21px;
+    color: #fff;
+    text-decoration: none;
+    background: none;
+    border: none;
+}
+.sidebar .sidebar-menu .special:hover{
+    color: #2f3e46f5;
+    transition: .2s;
+} */
+
+/* ------------------------------------------------ */
+
+/* 2- byanat  */
+/* add button */
+
+/* .bayanat  #addDivButton{
+    position: relative;
+    float: left;
+    border: none;
+    width: 10%;
+    font-size: 25px;
+    padding: 7px; 
+    margin-left: 50px;   
+    margin-top: 10px;
+    border-radius: 20px; 
+    background-color: #009973;
+    color: #fff; 
+    
+} */
+/* .bayanat  #addDivButton:hover{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.253) ,rgba(35, 35, 36, 0.212));
+    color: #ffff;
+} */
+/* employee card */
+
+/* .bayanat header .card{
+    display: flex;
+    max-width: 540px;
+    position: relative;
+    margin-right:365px;
+    margin-top: 10px;
+    padding: 20px;
+    border: 1px solid rgba(128, 128, 128, 0.281);
+    box-shadow: 3px 2px 2px rgba(177, 173, 173, 0.623);
+} */
+/* img */
+/* .bayanat header .card .emp-img{
+    width: 100px;
+    height: 120px;
+    border-radius: 50%;
+    text-align: center;
+    margin: auto;
+}
+.bayanat header .card .emp-img img{  
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    border-radius: inherit;
+}
+.bayanat header h3{
+    color:#009973;
+    margin-right: 10px;
+} */
+/* button */
+/* .bayanat header .card button {
+    border: none;
     width: 30%;
     font-size: 20px;
     padding: 7px;    
@@ -135,6 +411,6 @@
 .bayanat header .card button:hover{
     background-image: linear-gradient(rgba(0, 0, 0, 0.253) ,rgba(35, 35, 36, 0.212));
     color: #ffff;
-}
+} */
 
 /* --------------------------------------------------------- */

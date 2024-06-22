@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Gulzar&family=Mirza:wght@600&family=Reem+Kufi:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@400;700&family=Qahiri&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 *{
     direction: rtl;
     padding: 0;
@@ -11,14 +11,131 @@
     text-decoration: none;
     font-family: 'amiri', 'cursive';
 }
+::after,
+::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 /* 1- sidebar  */
-.sidebar{
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.wrapper {
+    /* display: flex; */
+    height: 100vh;
+}
+
+#sidebar {
+    width: 70px;
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    min-width: 70px;
+    z-index: 1000;
+    transition: all .25s ease-in-out;
+    background-color: #009973;
+    display: flex;
+    flex-direction: column;
+}
+
+#sidebar.expand {
+    width: 300px;
+    min-width: 260px;
+}
+
+.toggle-btn {
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+    padding: 1rem 1.5rem;
+}
+.toggle-btn i {
+    font-size: 1.5rem;
+    color: #FFF;
+}
+
+.sidebar-logo img{
+    margin: 10px 0;
+    height: 50px;
+    width: 110px;
+}
+
+#sidebar:not(.expand) .sidebar-logo,
+#sidebar:not(.expand) a.sidebar-link span {
+    display: none;
+}
+
+.sidebar-nav {
+    padding: 2rem 0;
+    flex: 1 1 auto;
+}
+
+a.sidebar-link {
+    margin-right: 30px;
+    margin-bottom: 30px;
+    font-size: 21px;
+    color: #fff;
+    padding: .625rem 1.625rem;
+    color: #FFF;
+    display: block;
+    white-space: nowrap;
+    border-left: 3px solid transparent;
+}
+/* background hover for links */
+#sidebar ul li a.sidebar-link:hover{
+    color: #009973;
+    font-weight: bold;
+    background-color: #fff;
+    padding-right: 6px;
+    transition: .3s;
+    border-radius: 0px 30px 30px 0px;
+}
+#sidebar ul li a span:focus{
+    color: #009973;
+    font-weight: bold;
+    background-color: #fff;
+    padding-right: 6px;
+    transition: 0s;
+    border-radius: 0px 30px 30px 0px;
+}
+
+.sidebar-item {
+    position: relative;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"]::after {
+    border: solid;
+    border-width: 0 .075rem .075rem 0;
+    content: "";
+    display: inline-block;
+    padding: 2px;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.4rem;
+    transform: rotate(-135deg);
+    transition: all .2s ease-out;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"].collapsed::after {
+    transform: rotate(45deg);
+    transition: all .2s ease-out;
+}
+
+/* .sidebar{
     width: 345px;
     position: fixed;
     right: 0;
     top: 0;
     height: 100%;
     background-color: #009973;
+    z-index: 1;
 }
 .sidebar .navbar-brand img{
     height: 50px;
@@ -35,26 +152,26 @@
     
     font-size: 21px;
     color: #fff;
-}
+} */
 /* background hover for links */
-.sidebar .sidebar-menu ul li a:hover{
+/* .sidebar .sidebar-menu ul li a:hover{
     color: #009973;
     font-weight: bold;
     background-color: #fff;
     padding-right: 6px;
     transition: .3s;
     border-radius: 0px 30px 30px 0px;
-}
-.sidebar .sidebar-menu ul li a:focus{
+} */
+/* .sidebar .sidebar-menu ul li a:focus{
     color: #009973;
     font-weight: bold;
     background-color: #fff;
     padding-right: 6px;
     transition: 0s;
     border-radius: 0px 30px 30px 0px;
-}
+} */
 /* log out button*/
-.sidebar .sidebar-menu  button{
+/* .sidebar .sidebar-menu  button{
     margin-top: 100%;
     font-size: 21px;
     color: #fff;
@@ -65,17 +182,15 @@
 .sidebar .sidebar-menu .special:hover{
     color: #2f3e46f5;
     transition: .2s;
-}
+} */
 /* ------------------------------------------------ */
 /* 2- attendance */
 section table{
-    margin-right: 365px;
+    margin:20px;
     background-color: #e4dcdc4b;
-    margin-top: 20px;
     border-collapse: collapse;
     /* border:1px solid rgba(212, 208, 208, 0.562); */
     box-shadow: 3px 2px 2px rgba(177, 173, 173, 0.623);
-    width:70%;
     border-radius: 15px;
     text-align: center;
     

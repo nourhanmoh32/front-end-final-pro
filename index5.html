@@ -12,32 +12,93 @@
 </head>
 <body>
     <!-- 1- sidebar -->
-    <div class="sidebar">
-        <a class="navbar-brand" href="index.html">
-            <img src="photos/logo.png" alt="logo">
-        </a>
-        <div class="sidebar-menu">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                <a class="nav-link " aria-current="page" href="index2.html">بيانات الموظفين</a>
+    <div class="wrapper d-flex">
+        <!-- 1- sidebar -->
+        <aside id="sidebar">
+            <div class="d-flex">
+                <button class="toggle-btn" type="button">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div class="sidebar-logo">
+                    <img src="photos/logo.png" alt="logo">
+                </div>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="sidebar-item">
+                    <a href="index2.html" class="sidebar-link">
+                        <span>بيانات الموظفين</span>
+                    </a>
                 </li>
-                <li class="nav-item">
-                <a class="nav-link" href="index3.html">الحضور والانصراف</a>
+                <li class="sidebar-item">
+                    <a href="index3.html" class="sidebar-link">
+                        <span>الحضور والانصراف</span>
+                    </a>
                 </li>
-                <li class="nav-item">
-                <a class="nav-link" href="index4.html">طلبات الأجازة</a>
+                <li class="sidebar-item">
+                    <a href="index4.html" class="sidebar-link">
+                        <span>طلبات الأجازة</span>
+                    </a>
                 </li>
-                <li class="nav-item">
-                <a class="nav-link" href="index5.html">طلبات الانصراف</a>
+                <li class="sidebar-item">
+                    <a href="index5.html" class="sidebar-link">
+                        <span>طلبات الانصراف</span>
+                    </a>
                 </li>
-            </ul>
-            <button class="special" href="index.html">تسجيل خروج <span><i class="fa-solid fa-right-from-bracket fa-rotate-180"></i></span></button>
-        </div>    
+            </ul>   
+                
+            <div class="sidebar-footer">
+                <a href="#" class="sidebar-link">
+                    <span>تسجيل خروج </span>
+                    <span><i class="fa-solid fa-right-from-bracket fa-rotate-180"></i></span>
+                </a>
+            </div>
+        </aside>
+         <!-- 2- departure -->
+        <section class="departure">
+            <div class="hol-img">
+            <img src="photos/person.jpg"width="150" height="100">
+            </div>
+
+            <h2 class="header">طلب انصراف من "محمد أحمد أحمد"</h2>
+            <form action="#">
+                <div class="label">زمن الانصراف:</div>
+                <div class="date-div"></div>
+
+                <div class="label">السبب:</div>
+                <div class="reason-div"></div>
+
+                <div class="hol-buttons">
+                    <button type="button" class="button" onclick="approveVacation()">قبول الطلب</button>
+                    <button type="button" class="button-cancel" onclick="rejectVacation()">رفض الطلب</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- second request -->
+        <section class="departure">
+            <div class="hol-img">
+            <img src="photos/person.jpg"width="150" height="100">
+            </div>
+
+            <h2 class="header">طلب انصراف من "زيد محمد علي"</h2>
+            <form action="#">
+                <div class="label">زمن الانصراف:</div>
+                <div class="date-div"></div>
+
+                <div class="label">السبب:</div>
+                <div class="reason-div"></div>
+
+                <div class="hol-buttons">
+                    <button type="button" class="button" onclick="approveVacation()">قبول الطلب</button>
+                    <button type="button" class="button-cancel" onclick="rejectVacation()">رفض الطلب</button>
+                </div>
+            </form>
+        </section>
     </div>
     <!-- ---------------------------------------------------- -->
 
     <!-- 2- departure -->
-    <section class="departure">
+    <!-- <section class="departure">
         <div class="hol-img">
         <img src="photos/person.jpg"width="150" height="100">
         </div>
@@ -55,10 +116,10 @@
                 <button type="button" class="button-cancel" onclick="rejectVacation()">رفض الطلب</button>
             </div>
         </form>
-    </section>
+    </section> -->
 
     <!-- second request -->
-    <section class="departure">
+    <!-- <section class="departure">
         <div class="hol-img">
         <img src="photos/person.jpg"width="150" height="100">
         </div>
@@ -76,8 +137,9 @@
                 <button type="button" class="button-cancel" onclick="rejectVacation()">رفض الطلب</button>
             </div>
         </form>
-    </section>
-
-<script src="script.js"></script>  
+    </section> -->
+    <!-- -------------------------------------------------------- -->
+    <script src="bootstrap-5.3.0-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script5.js"></script>  
 </body>
 </html>
