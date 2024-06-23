@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         newCard.innerHTML = `
             <div class="row g-0">
                 <div class="emp-img col-md-4">
-                    <img src="photos/person.jpg" class="img-fluid rounded-start" alt="...">
+                    <img src="photos/person new.png" class="img-fluid rounded-start" alt="...">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
