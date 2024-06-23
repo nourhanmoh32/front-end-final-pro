@@ -1,10 +1,10 @@
 // alert after press request buttons
 function approveVacation() {
-    alert("تم قبول طلب الإجازة بنجاح!");
+    alert("تم قبول طلب الأجازة بنجاح!");
 }
 
 function rejectVacation() {
-    alert("تم رفض طلب الإجازة.");
+    alert("تم رفض طلب الأجازة.");
 }
 // ---------------------------------------------------------
 

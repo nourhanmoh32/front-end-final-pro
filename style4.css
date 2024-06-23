@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Gulzar&family=Mirza:wght@600&family=Reem+Kufi:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@400;700&family=Qahiri&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 
 *{
     direction: rtl;
@@ -11,13 +13,9 @@
     text-decoration: none;
     font-family: 'amiri', 'cursive';
 }
+
 /* --------------------- */
-::after,
-::before {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+
 /* 1- sidebar  */
 a {
     text-decoration: none;
@@ -28,8 +26,8 @@ li {
 }
 
 .wrapper {
-    /* display: flex; */
     height: 100vh;
+    
 }
 
 #sidebar {
@@ -44,11 +42,12 @@ li {
     background-color: #009973;
     display: flex;
     flex-direction: column;
+    position: fixed;
 }
 
 #sidebar.expand {
     width: 300px;
-    min-width: 260px;
+    min-width: 300px;
 }
 
 .toggle-btn {
@@ -128,19 +127,143 @@ a.sidebar-link {
     transform: rotate(45deg);
     transition: all .2s ease-out;
 }
+/* ------------------------------------------------------------- */
 
-/* ------------------------------------------------ */
+@media screen and (max-width: 768px) {
+    .hol {
+        margin-left: 70px; 
+    }
+
+    #sidebar.expand ~ .hol {
+        margin-left: 70px; 
+    }
+}
 /* 2- holiday */
-.holiday {
-    /* position: relative; */
+
+.all-cards {
+    margin-right: 10px; 
+    padding-top: 10px; 
+    transition: margin-left 0.25s ease-in-out;
+    flex: 1;
+    /* margin-left: 70px; */
+    margin:65px 30px;
+    overflow-y: auto; 
+}
+#sidebar.expand ~ .all-cards {
+    margin-left: 100px; 
+    /* margin-right: 290px; */
+}
+/* Media queries for responsiveness hol with sidebar*/
+@media screen and (max-width: 768px) {
+    #sidebar.expand ~ .all-cards {
+        margin-left: 300px; 
+    }
+
+    .all-cards {
+        margin-left: 10px; 
+    }
+}
+.all-cards .card{
+    /* width: 440px; */
+    display: flex;
+    position: relative;
+    margin:65px 50px;
+    padding: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.281);
+    border-radius: 20px;
+    box-shadow: 3px 2px 2px rgba(177, 173, 173, 0.623);
+    background-color: #ece5e5;
+    background-size: cover;
+    
+}
+/* hol image  */
+.all-cards .card .hol-img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: -65px;
+}
+.all-cards .card .hol-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    border-radius: inherit;
+}
+/* hol title & label"bottom space" */
+.all-cards .card .card-body .card-title{
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #009973;
+}
+.all-cards .card .card-body  .hol-text .label {
+    font-size: 20px;
+    margin-bottom: 7px;
+    margin-top: 9px;
+    color: #777;
+}
+.all-cards .card .card-body  .hol-text .date-div, .reason-div, .type-div {
+    height: 40px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: #f5f8f3;
+    border-radius: 5px;
+}
+/* hol buttons  */
+.hol-buttons{
+    text-align: center; 
+    margin-top: 20px;
+}
+.button {
+    font-size: 15px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 10px;
+    border: none;
+    border-radius:10px ;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+
+.button-cancel {
+    font-size: 15px;
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 10px;
+    border: none;
+    border-radius:10px ;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.button-cancel:hover {
+    background-color: #c82333;
+} 
+
+
+/* /-------------------------------------------------------الى هنا--------------- */
+
+/* .holiday {
+    position: relative;
     border: 1px solid #ccc;
     padding: 10px;
-    margin-right: 360px;
+    margin-right: 30px;
     margin-top: 65px;
-    margin-bottom: 100px;
     border-radius: 10px;
-    /* width: 50%; */
     background-color: #cad2c5;
+    background-size: cover;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 .holiday .hol-img{
@@ -175,7 +298,6 @@ a.sidebar-link {
     color: #777;
 }
 .holiday .date-div, .reason-div, .type-div {
-    width: 100%;
     height: 40px;
     padding: 8px;
     border: 1px solid #ccc;
@@ -211,9 +333,8 @@ a.sidebar-link {
     cursor: pointer;
     border-radius: 4px;
     margin-top: 10px;
-    display: inline-block;
 }
 
 .button-cancel:hover {
     background-color: #c82333;
-}
+} */

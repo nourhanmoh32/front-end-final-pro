@@ -12,12 +12,7 @@
     font-family: 'amiri', 'cursive';
 }
 /* ---------------------- */
-::after,
-::before {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+
 /* 1- sidebar  */
 a {
     text-decoration: none;
@@ -28,8 +23,8 @@ li {
 }
 
 .wrapper {
-    /* display: flex; */
     height: 100vh;
+    
 }
 
 #sidebar {
@@ -44,11 +39,12 @@ li {
     background-color: #009973;
     display: flex;
     flex-direction: column;
+    position: fixed;
 }
 
 #sidebar.expand {
     width: 300px;
-    min-width: 260px;
+    min-width: 300px;
 }
 
 .toggle-btn {
@@ -128,79 +124,57 @@ a.sidebar-link {
     transform: rotate(45deg);
     transition: all .2s ease-out;
 }
+/* ------------------------------------------------------------- */
 
-/* 1- sidebar  */
-/* .sidebar{
-    width: 345px;
-    position: fixed;
-    right: 0;
-    top: 0;
-    height: 100%;
-    background-color: #009973;
-    z-index: 1;
+@media screen and (max-width: 768px) {
+    .hol {
+        margin-left: 70px; 
+    }
+
+    #sidebar.expand ~ .hol {
+        margin-left: 70px; 
+    }
 }
-.sidebar .navbar-brand img{
-    height: 50px;
-    width: 120px;
-    position: relative;
-}
-.sidebar .sidebar-menu{
-    margin-right: 100px;
-    margin-top: 4px;
-}
-.sidebar .sidebar-menu ul li{
-    padding-top: 40px;
-}
-.sidebar .sidebar-menu ul li a{
-    
-    font-size: 21px;
-    color: #fff;
-} */
-/* background hover for links */
-/* .sidebar .sidebar-menu ul li a:hover{
-    color: #009973;
-    font-weight: bold;
-    background-color: #fff;
-    padding-right: 6px;
-    transition: .3s;
-    border-radius: 0px 30px 30px 0px;
-}
-.sidebar .sidebar-menu ul li a:focus{
-    color: #009973;
-    font-weight: bold;
-    background-color: #fff;
-    padding-right: 6px;
-    transition: 0s;
-    border-radius: 0px 30px 30px 0px;
-} */
-/* log out button*/
-/* .sidebar .sidebar-menu  .special{
-    margin-top: 100%;
-    font-size: 21px;
-    color: #fff;
-    text-decoration: none;
-    background: none;
-    border: none;
-}
-.sidebar .sidebar-menu .special:hover{
-    color: #2f3e46f5;
-    transition: .2s;
-} */
-/* ------------------------------------------------ */
 /* 2- holiday */
-.departure {
-    position: relative;
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-right: 360px;
-    margin-top: 65px;
-    margin-bottom: 100px;
-    border-radius: 10px;
-    width: 50%;
-    background-color: #cad2c5;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+.all-cards {
+    margin-right: 10px; 
+    padding-top: 10px; 
+    transition: margin-left 0.25s ease-in-out;
+    flex: 1;
+    /* margin-left: 70px; */
+    margin:65px 30px;
+    overflow-y: auto; 
 }
-.departure .hol-img{
+#sidebar.expand ~ .all-cards {
+    margin-left: 100px; 
+    /* margin-right: 290px; */
+}
+/* Media queries for responsiveness hol with sidebar*/
+@media screen and (max-width: 768px) {
+    #sidebar.expand ~ .all-cards {
+        margin-left: 300px; 
+    }
+
+    .all-cards {
+        margin-left: 10px; 
+    }
+}
+.all-cards .card{
+    /* width: 440px; */
+    display: flex;
+    position: relative;
+    margin:65px 50px;
+    padding: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.281);
+    border-radius: 20px;
+    box-shadow: 3px 2px 2px rgba(177, 173, 173, 0.623);
+    background-color: #ece5e5;
+    background-size: cover;
+    
+}
+/* hol image  */
+.all-cards .card .hol-img{
     width: 120px;
     height: 120px;
     border-radius: 50%;
@@ -209,51 +183,52 @@ a.sidebar-link {
     margin-bottom: 20px;
     margin-top: -65px;
 }
-.departure img{
-    border-radius: 50%;
+.all-cards .card .hol-img img{
     width: 100%;
     height: 100%;
     object-fit: cover;
     position: relative;
+    border-radius: inherit;
 }
-
-.header {
+/* hol title & label"bottom space" */
+.all-cards .card .card-body .card-title{
     text-align: center;
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
     color: #009973;
 }
-.label {
-    display: block;
+.all-cards .card .card-body  .hol-text .label {
     font-size: 20px;
     margin-bottom: 7px;
     margin-top: 9px;
     color: #777;
 }
-.departure .date-div, .reason-div {
-    width: 100%;
+.all-cards .card .card-body  .hol-text .date-div, .reason-div, .type-div {
     height: 40px;
     padding: 8px;
     border: 1px solid #ccc;
     box-sizing: border-box;
     background-color: #f5f8f3;
-    border-radius: 4px;
+    border-radius: 5px;
 }
-.departure .hol-buttons{
+/* hol buttons  */
+.hol-buttons{
     text-align: center; 
     margin-top: 20px;
+    margin-left: 10px;
 }
 .button {
+    font-size: 15px;
     background-color: #4CAF50;
-    margin-left: 30px;
+    /* margin-left: 30px; */
     color: white;
-    padding: 10px 20px;
+    padding: 10px 10px;
     border: none;
+    border-radius:10px ;
     cursor: pointer;
     border-radius: 4px;
     margin-top: 10px;
-    display: inline-block;
 }
 
 .button:hover {
@@ -261,16 +236,17 @@ a.sidebar-link {
 }
 
 .button-cancel {
+    font-size: 15px;
     background-color: #dc3545;
     color: white;
-    padding: 10px 20px;
+    padding: 10px 10px;
     border: none;
+    border-radius:10px ;
     cursor: pointer;
     border-radius: 4px;
     margin-top: 10px;
-    display: inline-block;
 }
 
 .button-cancel:hover {
     background-color: #c82333;
-}
+} 
