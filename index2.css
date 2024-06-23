@@ -139,7 +139,7 @@ a.sidebar-link {
 /* 2- byanat  */
 .bayanat {
     transition: margin-left 0.25s ease-in-out;
-    margin-right: 70px; /* Adjust initial margin for the collapsed sidebar */
+    margin-right: 10px; /* Adjust initial margin for the collapsed sidebar */
     padding-top: 10px; /* Optional: Add padding to ensure content doesn't get cut off */
     flex: 1; /* Take up remaining space */
     overflow-y: auto; /* Allow vertical scrolling */
@@ -156,7 +156,7 @@ a.sidebar-link {
     }
 
     .bayanat {
-        margin-left: 70px; /* Ensure margin is correct for smaller screens */
+        margin-left: 10px; /* Ensure margin is correct for smaller screens */
     }
 }
 /* add button */
@@ -187,12 +187,14 @@ a.sidebar-link {
     margin-left: 30px; 
     margin-top: 10px;
     padding: 20px;
+    background-color: #ece5e5;
     border: 1px solid rgba(128, 128, 128, 0.281);
+    border-radius: 20px;
     box-shadow: 3px 2px 2px rgba(177, 173, 173, 0.623);
 }
 /* img */
 .bayanat header .card .emp-img{
-    border-radius: 50%;
+    /* border-radius: 50%; */
     margin: auto;
 }
 .bayanat header .card .emp-img img{  
@@ -258,8 +260,6 @@ a.sidebar-link {
 @media screen and (max-width: 480px) {
     .bayanat header .card {
         flex-direction: column;
-        align-items: center;
-        text-align: center;
         width: 100%;
         margin: 10px;
         margin-left: 20px;
