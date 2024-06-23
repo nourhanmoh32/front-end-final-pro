@@ -99,10 +99,12 @@ a.sidebar-link {
     font-weight: bold;
     background-color: #fff;
     padding-right: 6px;
-    transition: 0s;
+    transition: 0.5s;
     border-radius: 0px 30px 30px 0px;
 }
-
+#sidebar .sidebar-footer .sidebar-link:hover{
+    color: #2f3e46f5;
+}
 .sidebar-item {
     position: relative;
 }
@@ -285,132 +287,3 @@ a.sidebar-link {
         margin-right: 0;
     }
 }
-/* 1- sidebar  */
-/* .sidebar{
-    width: 345px;
-    position: fixed;
-    right: 0;
-    top: 0;
-    height: 100%;
-    background-color: #009973;
-    z-index: 1;
-}
-.sidebar .navbar-brand img{
-    height: 50px;
-    width: 120px;
-    position: relative;
-}
-.sidebar .sidebar-menu{
-    margin-right: 100px;
-    margin-top: 4px;
-}
-.sidebar .sidebar-menu ul li{
-    padding-top: 40px;
-}
-.sidebar .sidebar-menu ul li a{
-    
-    font-size: 21px;
-    color: #fff;
-} */
-/* background hover for links */
-/* .sidebar .sidebar-menu ul li a:hover{
-    color: #009973;
-    font-weight: bold;
-    background-color: #fff;
-    padding-right: 6px;
-    transition: .3s;
-    border-radius: 0px 30px 30px 0px;
-}
-.sidebar .sidebar-menu ul li a:focus{
-    color: #009973;
-    font-weight: bold;
-    background-color: #fff;
-    padding-right: 6px;
-    transition: 0s;
-    border-radius: 0px 30px 30px 0px;
-} */
-/* log out button*/
-/* .sidebar .sidebar-menu  .special{
-    margin-top: 100%;
-    font-size: 21px;
-    color: #fff;
-    text-decoration: none;
-    background: none;
-    border: none;
-}
-.sidebar .sidebar-menu .special:hover{
-    color: #2f3e46f5;
-    transition: .2s;
-} */
-
-/* ------------------------------------------------ */
-
-/* 2- byanat  */
-/* add button */
-
-/* .bayanat  #addDivButton{
-    position: relative;
-    float: left;
-    border: none;
-    width: 10%;
-    font-size: 25px;
-    padding: 7px; 
-    margin-left: 50px;   
-    margin-top: 10px;
-    border-radius: 20px; 
-    background-color: #009973;
-    color: #fff; 
-    
-} */
-/* .bayanat  #addDivButton:hover{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.253) ,rgba(35, 35, 36, 0.212));
-    color: #ffff;
-} */
-/* employee card */
-
-/* .bayanat header .card{
-    display: flex;
-    max-width: 540px;
-    position: relative;
-    margin-right:365px;
-    margin-top: 10px;
-    padding: 20px;
-    border: 1px solid rgba(128, 128, 128, 0.281);
-    box-shadow: 3px 2px 2px rgba(177, 173, 173, 0.623);
-} */
-/* img */
-/* .bayanat header .card .emp-img{
-    width: 100px;
-    height: 120px;
-    border-radius: 50%;
-    text-align: center;
-    margin: auto;
-}
-.bayanat header .card .emp-img img{  
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: relative;
-    border-radius: inherit;
-}
-.bayanat header h3{
-    color:#009973;
-    margin-right: 10px;
-} */
-/* button */
-/* .bayanat header .card button {
-    border: none;
-    width: 30%;
-    font-size: 20px;
-    padding: 7px;    
-    border-radius: 20px; 
-    background-color: #009973;
-    color: #fff; 
-    transition-delay: .4s;
-}
-.bayanat header .card button:hover{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.253) ,rgba(35, 35, 36, 0.212));
-    color: #ffff;
-} */
-
-/* --------------------------------------------------------- */

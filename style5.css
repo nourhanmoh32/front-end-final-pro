@@ -24,7 +24,7 @@ li {
 
 .wrapper {
     height: 100vh;
-    
+    display: flex;
 }
 
 #sidebar {
@@ -58,7 +58,7 @@ li {
     color: #FFF;
 }
 
-.sidebar-logo img{
+.sidebar-logo img {
     margin: 10px 0;
     height: 50px;
     width: 110px;
@@ -86,7 +86,7 @@ a.sidebar-link {
     border-left: 3px solid transparent;
 }
 /* background hover for links */
-#sidebar ul li a.sidebar-link:hover{
+#sidebar ul li a.sidebar-link:hover {
     color: #009973;
     font-weight: bold;
     background-color: #fff;
@@ -94,7 +94,7 @@ a.sidebar-link {
     transition: .3s;
     border-radius: 0px 30px 30px 0px;
 }
-#sidebar ul li a span:focus{
+#sidebar ul li a span:focus {
     color: #009973;
     font-weight: bold;
     background-color: #fff;
@@ -102,7 +102,9 @@ a.sidebar-link {
     transition: 0s;
     border-radius: 0px 30px 30px 0px;
 }
-
+#sidebar .sidebar-footer .sidebar-link:hover{
+    color: #2f3e46f5;
+}
 .sidebar-item {
     position: relative;
 }
@@ -126,55 +128,41 @@ a.sidebar-link {
 }
 /* ------------------------------------------------------------- */
 
-@media screen and (max-width: 768px) {
-    .hol {
-        margin-left: 70px; 
-    }
-
-    #sidebar.expand ~ .hol {
-        margin-left: 70px; 
-    }
-}
 /* 2- holiday */
-
 .all-cards {
-    margin-right: 10px; 
+    margin-left: 10px; /* Adjusted to account for right sidebar */
     padding-top: 10px; 
-    transition: margin-left 0.25s ease-in-out;
+    transition: margin-right 0.25s ease-in-out;
     flex: 1;
-    /* margin-left: 70px; */
-    margin:65px 30px;
+    margin-right: 70px; /* Margin for the collapsed sidebar */
     overflow-y: auto; 
 }
 #sidebar.expand ~ .all-cards {
-    margin-left: 100px; 
-    /* margin-right: 290px; */
+    margin-right: 300px; /* Adjust margin for the expanded sidebar */
 }
-/* Media queries for responsiveness hol with sidebar*/
+/* Media queries for responsiveness hol with sidebar */
 @media screen and (max-width: 768px) {
     #sidebar.expand ~ .all-cards {
-        margin-left: 300px; 
+        margin-right: 300px; 
     }
 
     .all-cards {
-        margin-left: 10px; 
+        margin-right: 70px; /* Ensure margin is correct for smaller screens */
     }
 }
-.all-cards .card{
-    /* width: 440px; */
+.all-cards .card {
     display: flex;
     position: relative;
-    margin:65px 50px;
+    margin: 65px 30px;
     padding: 10px;
     border: 1px solid rgba(128, 128, 128, 0.281);
     border-radius: 20px;
     box-shadow: 3px 2px 2px rgba(177, 173, 173, 0.623);
     background-color: #ece5e5;
     background-size: cover;
-    
 }
-/* hol image  */
-.all-cards .card .hol-img{
+/* hol image */
+.all-cards .card .hol-img {
     width: 120px;
     height: 120px;
     border-radius: 50%;
@@ -183,7 +171,7 @@ a.sidebar-link {
     margin-bottom: 20px;
     margin-top: -65px;
 }
-.all-cards .card .hol-img img{
+.all-cards .card .hol-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -191,20 +179,22 @@ a.sidebar-link {
     border-radius: inherit;
 }
 /* hol title & label"bottom space" */
-.all-cards .card .card-body .card-title{
+.all-cards .card .card-body .card-title {
     text-align: center;
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
     color: #009973;
 }
-.all-cards .card .card-body  .hol-text .label {
+.all-cards .card .card-body .hol-text .label {
     font-size: 20px;
     margin-bottom: 7px;
     margin-top: 9px;
     color: #777;
 }
-.all-cards .card .card-body  .hol-text .date-div, .reason-div, .type-div {
+.all-cards .card .card-body .hol-text .date-div,
+.all-cards .card .card-body .hol-text .reason-div,
+.all-cards .card .card-body .hol-text .type-div {
     height: 40px;
     padding: 8px;
     border: 1px solid #ccc;
@@ -212,41 +202,37 @@ a.sidebar-link {
     background-color: #f5f8f3;
     border-radius: 5px;
 }
-/* hol buttons  */
-.hol-buttons{
-    text-align: center; 
+/* hol buttons */
+.hol-buttons {
+    text-align: center;
     margin-top: 20px;
-    margin-left: 10px;
 }
 .button {
     font-size: 15px;
     background-color: #4CAF50;
-    /* margin-left: 30px; */
     color: white;
     padding: 10px 10px;
     border: none;
-    border-radius:10px ;
+    border-radius: 10px;
     cursor: pointer;
     border-radius: 4px;
     margin-top: 10px;
+    margin: 0 15px; /* Added margin to increase space between buttons */
 }
-
 .button:hover {
     background-color: #45a049;
 }
-
 .button-cancel {
     font-size: 15px;
     background-color: #dc3545;
     color: white;
     padding: 10px 10px;
     border: none;
-    border-radius:10px ;
+    border-radius: 10px;
     cursor: pointer;
     border-radius: 4px;
     margin-top: 10px;
 }
-
 .button-cancel:hover {
     background-color: #c82333;
-} 
+}

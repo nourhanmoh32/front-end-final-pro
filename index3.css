@@ -10,15 +10,7 @@
     list-style-type: none;
     text-decoration: none;
     font-family: 'amiri', 'cursive';
-}
-::after,
-::before {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-/* 1- sidebar  */
-a {
+}a {
     text-decoration: none;
 }
 
@@ -27,10 +19,8 @@ li {
 }
 
 .wrapper {
-    display: flex;
     height: 100vh;
-    position: relative; /* Ensure proper positioning of child elements */
-
+    display: flex;
 }
 
 #sidebar {
@@ -38,7 +28,7 @@ li {
     height: 100vh;
     top: 0;
     bottom: 0;
-    right: 0;
+    right: 0;  /* Ensure the sidebar is positioned on the right */
     min-width: 70px;
     z-index: 1000;
     transition: all .25s ease-in-out;
@@ -64,7 +54,7 @@ li {
     color: #FFF;
 }
 
-.sidebar-logo img{
+.sidebar-logo img {
     margin: 10px 0;
     height: 50px;
     width: 110px;
@@ -91,8 +81,9 @@ a.sidebar-link {
     white-space: nowrap;
     border-left: 3px solid transparent;
 }
+
 /* background hover for links */
-#sidebar ul li a.sidebar-link:hover{
+#sidebar ul li a.sidebar-link:hover {
     color: #009973;
     font-weight: bold;
     background-color: #fff;
@@ -100,7 +91,8 @@ a.sidebar-link {
     transition: .3s;
     border-radius: 0px 30px 30px 0px;
 }
-#sidebar ul li a span:focus{
+
+#sidebar ul li a span:focus {
     color: #009973;
     font-weight: bold;
     background-color: #fff;
@@ -108,7 +100,9 @@ a.sidebar-link {
     transition: 0s;
     border-radius: 0px 30px 30px 0px;
 }
-
+#sidebar .sidebar-footer .sidebar-link:hover{
+    color: #2f3e46f5;
+}
 .sidebar-item {
     position: relative;
 }
@@ -134,31 +128,81 @@ a.sidebar-link {
 /* ------------------------------------------------ */
 
 /* 2- attendance */
+.attendance {
+    transition: margin-right 0.25s ease-in-out;
+    padding-top: 10px; /* Optional: Add padding to ensure content doesn't get cut off */
+    flex: 1; /* Take up remaining space */
+    overflow-y: auto; /* Allow vertical scrolling */
+    margin-right: 90px; /* Margin for the collapsed sidebar */
+}
 
-section .attendance-table{
-    margin:20px;
+#sidebar.expand ~ .attendance {
+    margin-right: 300px; /* Adjust margin for the expanded sidebar */
+}
+
+/* Media queries for responsiveness attendance with sidebar */
+@media screen and (max-width: 768px) {
+    #sidebar.expand ~ .attendance {
+        margin-right: 300px;
+    }
+
+    .attendance {
+        margin-right: 70px; /* Ensure margin is correct for smaller screens */
+    }
+}
+
+section .attendance-table {
     background-color: #e4dcdc4b;
     border-collapse: collapse;
     box-shadow: 3px 2px 2px rgba(177, 173, 173, 0.623);
-    border-radius: 15px;
     text-align: center;
-    
+    position: relative;
+    margin-left: 10px;
+    margin-right: 30px;
+    width: calc(100% - 80px); /* Adjust the width to take remaining space */
+    margin-top: 10px;
+    border-radius: 20px; 
 }
-section .attendance-table thead tr{
+
+section .attendance-table thead tr {
     font-weight: bold;
     font-family: 'amiri', 'cursive';
     font-size: 24px;
     color: #009973;
     border-bottom: 1px solid #00997344;
-    
 }
-.attendance-table th,td{
+
+.attendance-table th, td {
     padding: 20px;
     margin-top: 10px;
     border-left: 1px solid #8e919044;
-    border-bottom:  1px solid #8e919044;
+    border-bottom: 1px solid #8e919044;
     border-radius: 15px;
 }
-.attendance-table td{
+
+.attendance-table td {
     color: #2f3e46f5;
+}
+
+/* Media queries "attendance" */
+@media screen and (max-width: 768px) {
+    .attendance .attendance-table {
+        width: calc(100% - 40px);
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .attendance .attendance-table {
+        flex-direction: column;
+        width: 100%;
+        padding: 10px;
+    }
+    .attendance #addDivButton {
+        margin-right: 5px;
+        margin-left: 5px;
+        font-size: 18px;
+        padding: 6px;
+    }
 }
