@@ -31,7 +31,7 @@ html {
 /* ----------------------------------------------------------- */
 
 /* 1- header */
-header .navbar{
+header .navbar {
   position: fixed;
   z-index: 999;
   width: 100%;
@@ -41,44 +41,51 @@ header .navbar .container .navbar-brand img {
   width: 120px;
   margin-left: 40px;
 }
-header .navbar .container  ul{
+header .navbar .container ul {
   background-color: #2f3e46f5;
   background-size: cover;
   border-radius: 50px;
   overflow: hidden;
   transition: 1s;
-  
 }
 
-header .navbar .container ul li a{
+header .navbar .container ul li a {
   color: white;
   font-size: 23px;
   font-weight: bold;
-  padding: 3px 20px;
+  padding: 3px 10px;
   letter-spacing: 1px;
 }
-header .navbar .container ul li a:hover{
+header .navbar .container ul li a:hover, a:focus {
   color: #009973;
   background-color: #fff;
+  background-size: cover;
   border-radius: 40px;
-  transition: .5s;
 }
-header .navbar .container  ul .special{
+header .navbar .container ul .special {
   margin-right: 80px;
+  margin-left: 10px;
   padding-left: 7px;
 }
-.navbar .navbar-toggler{
+.navbar .navbar-toggler {
   color: rgba(31, 30, 30, 0.589);
   border-color: rgba(31, 30, 30, 0.589);
   font-size: 25px;
   margin-left: 10px;
-  z-index: 2px;
+  z-index: 2;
 }
-.navbar .navbar-toggler:focus{
+.navbar .navbar-toggler:focus {
   box-shadow: none;
   border: #009973 solid 3px;
 }
-
+/* media Q for nav links */
+@media (max-width: 990px) {
+  header .navbar .container ul .special {
+    margin-right: 0;
+  }
+  
+}
+/* ----------------------------------------------------- */
 
 /* 2- home */
 /* form  */
@@ -88,54 +95,49 @@ header .navbar .container  ul .special{
   url(photos/accessories-near-laptop-notebooks.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 950px;
+  height: 100vh;
   background-attachment: fixed;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
+/* form  box*/
 #home .form-box{
+  width: 512px;
+  max-width: 90%;
+  height: 490px;
   position: relative;
   display: flex;
-  width: 512px;
-  height: 490px;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
   z-index: 2;
 }
+#home .form-box #log-in,
+#home .form-box #sign-up {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: .6s ease-in-out;
+  background-color: #cad2c5a1;
+  background-size: cover;
+  backdrop-filter: blur(2px);
+  border: 2px solid rgb(255, 255, 255,.2);
+  border-radius: 40px;
+  padding: 20px 30px;
+}
 
 #home .form-box #log-in {
-  position: absolute;
-  left: 4px;
-  width: 500px;
-  display: flex;
-  flex-direction: column;
-  transition: .5s ease-in-out;
-  
-  background-color: #cad2c5a1;
-  background-size: cover;
-  backdrop-filter: blur(2px);
-  border: 2px solid rgb(255, 255, 255,.2);
-  border-radius: 40px;
-  padding: 20px 30px;
-}
-#home .form-box #sign-up{
-  position: absolute;
-  right: -520px;
-  width: 500px;
-  display: flex;
-  flex-direction: column;
-  transition: .5s ease-in-out;
-
-  background-color: #cad2c5a1;
-  background-size: cover;
-  backdrop-filter: blur(2px);
-  border: 2px solid rgb(255, 255, 255,.2);
-  border-radius: 40px;
-  padding: 20px 30px;
+  left: 0;
 }
 
+#home .form-box #sign-up {
+  right: -100%;
+}
+
+/* form box featuers*/
 #home  h2 {
   margin-bottom: 20px;
   font-weight: bolder;
@@ -189,6 +191,7 @@ header .navbar .container  ul .special{
   float: right;
 }
 #home  .small-p  .a1{
+  background: none;
   margin-left: 26px;
   float: left;
   text-decoration: underline;
@@ -201,6 +204,27 @@ header .navbar .container  ul .special{
   color: #0d0e0dab;
 }
 
+/* Responsive form box */
+@media (max-width: 768px) {
+  #home .form-box {
+    width: 90%;
+  }
+  #home h2 {
+    font-size: 30px;
+  }
+  #home form label {
+    font-size: 20px;
+  }
+  #home form .form-control {
+    font-size: 15px;
+  }
+  #home form button {
+    font-size: 20px;
+    padding: 10px;
+  }
+  #home .small-p {
+    font-size: 18px;
+  }}
 
 /* --------------------------------------------------------- */
 
@@ -323,6 +347,7 @@ header .navbar .container  ul .special{
   color: #ffff;
   padding: 25px ;
 }
+
 #service .container .col{
   margin-bottom: 50px;
 }

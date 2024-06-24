@@ -1,4 +1,11 @@
+// toggle navbar
+const navbar = document.querySelector(".navbar-toggler");
 
+navbar.addEventListener("click", function () {
+  document.querySelector("#main").classList.toggle("show");
+});
+
+// --------------------------------------------------------------------
 // password alerts
 const yourCode=document.getElementById("yourCode");
 const password=document.getElementById("password");
@@ -37,12 +44,12 @@ const a =document.getElementById("log-in");
 const b =document.getElementById("sign-up");
 
 function login(){
-    a.style.left="4px";
-    b.style.right="-510px";
+    a.style.left="0";
+    b.style.right="-100%";
 }
 function register(){
-    a.style.left="-510px";
-    b.style.right="4px";
+    a.style.left="-100%";
+    b.style.right="0";
 }
 
 // ---------------------------------------------------------------
